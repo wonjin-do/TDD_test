@@ -3,8 +3,8 @@ package calculator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-//ÇÁ·¯´ö¼ÇÄÚµå
-//Å×½ºÆ® Áß°£Áß°£ ¹º°¡ ¸®ÆÑÅä¸µÇÒ ºÎºĞÀÌ ¾ø´ÂÁö Ã¼Å©ÇÑ´Ù.
+//í”„ëŸ¬ë•ì…˜ì½”ë“œ
+//í…ŒìŠ¤íŠ¸ ì¤‘ê°„ì¤‘ê°„ ë­”ê°€ ë¦¬íŒ©í† ë§í•  ë¶€ë¶„ì´ ì—†ëŠ”ì§€ ì²´í¬í•œë‹¤.
 public class Calculator {
 	public int add(String text) {
 //		if(text == null || text.isEmpty())
@@ -17,11 +17,11 @@ public class Calculator {
 //				sum += Integer.parseInt(value);
 //			}
 //			return sum;
-//		}//Å×½ºÆ® Áß°£Áß°£ ¹º°¡ ¸®ÆÑÅä¸µÇÒ ºÎºĞÀÌ ¾ø´ÂÁö Ã¼Å©ÇÑ´Ù.
+//		}//í…ŒìŠ¤íŠ¸ ì¤‘ê°„ì¤‘ê°„ ë­”ê°€ ë¦¬íŒ©í† ë§í•  ë¶€ë¶„ì´ ì—†ëŠ”ì§€ ì²´í¬í•œë‹¤.
 //		return Integer.parseInt(text);
 		
 		//refactoring
-		//String[] values = text.split(",");//¸â¹öÇÊµåÀÇ ¸Ş¼Òµå¸¦ È£ÃâÇÏ´Â °ÍÀÌ ¾Æ´Ñ
+		//String[] values = text.split(",");//ë©¤ë²„í•„ë“œì˜ ë©”ì†Œë“œë¥¼ í˜¸ì¶œí•˜ëŠ” ê²ƒì´ ì•„ë‹Œ
 		
 		
 //		int sum = 0;
@@ -29,7 +29,7 @@ public class Calculator {
 //			sum += Integer.parseInt(value);
 //		return sum;
 		
-		//String[] values = split(text);//Å¬·¡½ºÀÇ ¸Ş¼Òµå¸¦ È£ÃâÇÏ´Â ¹æ½ÄÀ¸·Î º¯°æ
+		//String[] values = split(text);//í´ë˜ìŠ¤ì˜ ë©”ì†Œë“œë¥¼ í˜¸ì¶œí•˜ëŠ” ë°©ì‹ìœ¼ë¡œ ë³€ê²½
 		//return sum(split(text));
 		return sum(toInt(split(text)));
 	}
@@ -41,7 +41,7 @@ public class Calculator {
 	private String[] split(String text) {
 		Matcher m = Pattern.compile("//(.)\n(.*)").matcher(text);
 		if(m.find()) {
-			String customDelimeter = m.group(1);//group(0)Àº textº¯¼ö°ªÀÓ.
+			String customDelimeter = m.group(1);//group(0)ì€ textë³€ìˆ˜ê°’ì„.
 			return m.group(2).split(customDelimeter);
 		}
 //		else {
@@ -50,7 +50,7 @@ public class Calculator {
 		return text.split(",|:");
 	}
 
-//  ¹®ÀÚ¿­À» int·Î º¯°æÇÏ°í µ¡¼À¿¬»êÀ» ÇÏ°í ÀÖ´Ù.(µÎ°¡Áö ÀÛ¾÷À» ÇÏ°í ÀÖÀ½)  
+//  ë¬¸ìì—´ì„ intë¡œ ë³€ê²½í•˜ê³  ë§ì…ˆì—°ì‚°ì„ í•˜ê³  ìˆë‹¤.(ë‘ê°€ì§€ ì‘ì—…ì„ í•˜ê³  ìˆìŒ)  
 //	private int sum(String[] values) {
 //		int sum = 0;
 //		for(String value : values) 

@@ -9,50 +9,50 @@ import org.junit.Test;
 import calculator.Calculator;
 
 public class CalculatorTest {
-	//ctrl + F11 ·Î ½ÇÇà
-	//alt + ¹æÇâÅ° : ÄÚµåÀÌµ¿
-	//ctrl + alt + ¹æÇâÅ° : ÄÚµåº¹»çÀÌµ¿
+	//ctrl + F11 ë¡œ ì‹¤í–‰
+	//alt + ë°©í–¥í‚¤ : ì½”ë“œì´ë™
+	//ctrl + alt + ë°©í–¥í‚¤ : ì½”ë“œë³µì‚¬ì´ë™
 	//alt + shift + R : rename refactoring
-	private Calculator cal;//Á¢±ÙÁ¦¾îÀÚ´Â private
+	private Calculator cal;//ì ‘ê·¼ì œì–´ìëŠ” private
 	
-	@Before //before ¾î³ëÅ×ÀÌ¼ÇÀ¸·Î ÃÊ±âÈ­¸¦ ÁøÇàÇÑ´Ù. ¸Å Å×½ºÆ®¸¶´Ù ÃÊ±âÈ­°¡ ÁøÇàµÇ¹Ç·Î Å×½ºÆ®ÀÇ µ¶¸³¼ºÀ» º¸ÀåÇÔ. 
+	@Before //before ì–´ë…¸í…Œì´ì…˜ìœ¼ë¡œ ì´ˆê¸°í™”ë¥¼ ì§„í–‰í•œë‹¤. ë§¤ í…ŒìŠ¤íŠ¸ë§ˆë‹¤ ì´ˆê¸°í™”ê°€ ì§„í–‰ë˜ë¯€ë¡œ í…ŒìŠ¤íŠ¸ì˜ ë…ë¦½ì„±ì„ ë³´ì¥í•¨. 
 	public void setup() {
 		cal = new Calculator();
 	}
 	
 	@Test
-	public void add_null_¶Ç´Â_ºó¹®ÀÚ() {
+	public void add_null_ë˜ëŠ”_ë¹ˆë¬¸ì() {
 		assertEquals(0, cal.add(null));
 		assertEquals(0, cal.add(""));
 	}
 	
 	@Test
-	public void add_¼ıÀÚÇÏ³ª()throws Exception {
+	public void add_ìˆ«ìí•˜ë‚˜()throws Exception {
 		assertEquals(1, cal.add("1"));
 	}
 	@Test
-	public void add_½±Ç¥±¸ºĞÀÚ() throws Exception {
+	public void add_ì‰½í‘œêµ¬ë¶„ì() throws Exception {
 		assertEquals(3, cal.add("1,2"));
 	}
 	
 	@Test
-	public void add_½°Ç¥_¶Ç´Â_Äİ·Ğ_±¸ºĞÀÚ()throws Exception {
+	public void add_ì‰¼í‘œ_ë˜ëŠ”_ì½œë¡ _êµ¬ë¶„ì()throws Exception {
 		assertEquals(6, cal.add("1,2:3"));
 	}
 	
 	@Test
-	public void add_custom_±¸ºĞÀÚ()throws Exception {
+	public void add_custom_êµ¬ë¶„ì()throws Exception {
 		assertEquals(6, cal.add("//;\n1;2;3"));
 	}
 	
 	@Test(expected = RuntimeException.class)
 	public void add_negative()throws Exception {
-		//À½¼ö°¡ ¹ß°ßµÇ¸é ·±Å¸ÀÓ¿¡·¯¸¦ ¹ß»ı½ÃÄÑ¶ó
+		//ìŒìˆ˜ê°€ ë°œê²¬ë˜ë©´ ëŸ°íƒ€ì„ì—ëŸ¬ë¥¼ ë°œìƒì‹œì¼œë¼
 		cal.add("-1,2,3");
 	}
 
 	
-	@After//Å×½ºÆ® ÀÌÈÄ Ã³¸®ÀÛ¾÷(ÀÚ¿ø¹İ³³µî)
+	@After//í…ŒìŠ¤íŠ¸ ì´í›„ ì²˜ë¦¬ì‘ì—…(ìì›ë°˜ë‚©ë“±)
 	public void teardown() {
 		
 	}
